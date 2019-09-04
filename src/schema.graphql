@@ -1,0 +1,33 @@
+#####################################
+## @author Moisés Maldaner de Lima ##
+#####################################
+
+#############
+## Schemas ##
+#############
+
+type User {
+    id: ID!
+    name: String!
+    phone: String
+    email: String
+    points: Int
+    balance: Int
+}
+
+#########################
+## Queries e Mutations ##
+#########################
+
+type RootQuery {
+    getUserByPhone(phone: String!): User!
+}
+
+type RootMutation {
+    CustomerCreation(phone: Int!): User! #Ainda nao existente
+}
+
+schema {
+    query: RootQuery
+    mutation: RootMutation
+}
